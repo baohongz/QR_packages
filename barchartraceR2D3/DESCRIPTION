@@ -1,0 +1,11 @@
+Package: barchartraceR2D3
+Type: Package
+Title: barchartrace r2d3
+Version: 1.1
+Date: 2018-01-15
+Author: BZ
+Maintainer: BZ <bz@gmail.com>
+Description:  barchartraceR2D3 implements the bar chart race in D3 providing a function to execute it in R
+License: Apache2
+Depends:
+    r2d3
