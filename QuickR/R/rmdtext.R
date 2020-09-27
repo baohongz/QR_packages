@@ -3,7 +3,10 @@
 
 #' @export
 rmdtext <- function(text, out_options = NULL){
-  writeLines(paste0("---\noutput:\n  html_document:\n    code_folding: hide\n    self_contained: true\n---\n\n",text), con="input.Rmd");
+  if (!grepl("---.*output:.*---\\s", text)) {
+    text <- paste0("---\noutput:\n  html_document:\n    code_folding: hide\n    self_contained: true\n---\n\n",text)
+  }
+  writeLines(text, con="input.Rmd");
   if (is.null(out_options)) {
     rmarkdown::render("input.Rmd", output_options = NULL, output_file="output.html");
   } else {
